@@ -1,0 +1,34 @@
+# Student name : Hussein Shatnawi
+
+# This program is for a company to buy 10 tickts for useres and every user can buy five tickts everytime and finally the program will show the transactions numbers
+# And it will inform the user if there is any mistake happened by the user 
+
+
+# We start to define variables of the total numbers of tickts that we have (As a global variable)  and the transaction counter 
+TOTALTICKTS = 10
+transactionsCounter = 0
+
+# If we have tickts then the while statement will be excuted, otherwise the loop will be terminated and the user will get a notification 
+# The first loop ( while loop) is to confirm that we have tickts to buy ; if we have tickts, the loop will be proceeded
+while TOTALTICKTS > 0:
+
+
+    print('We have ', TOTALTICKTS,'tickts.', ' How many tickts you want ?')        # this statement will tell the user how many tickts we have and to ask him to order 
+    newOrder = int(input(''))   # input statement to take the order from the user and proceed it 
+    if newOrder <= TOTALTICKTS:                # if statement to check the order is valid , or to confirm we have enough amounts of tickts for the order
+     if newOrder > 0 :
+      if newOrder <= 5 :                       # if statement to confirm the user can order only 5 tickts as max. numebr 
+         transactionsCounter += 1              # counter to counter the transactions 
+         TOTALTICKTS -= newOrder               # counter to find the totoal amount of tickts that we have 
+         print(" The process has done, and you have got ",newOrder , " tickts . Thank you !! ")      # to print the feedback for the user 
+
+      else :
+        print(' You exceed the limit, you can buy only five tickts and you ask to buy  ', newOrder, ' !!' )        # To inform the user he exceeded the limit 
+     else:
+        print(' You should enter correct number !!')                                            # To confrim the process is probably designed, no minus numbers will appered 
+    else :
+      print(' we Could''nt help you, we have only ' , TOTALTICKTS, ' Tickts')                   # To inform the user how much tickts we have 
+
+print('---' * 50)
+print('We gave you the maximum we could. We have 0 tickets left. Good bye !')                   # To inform the user we have no tickts to sell
+print( 'You had ', transactionsCounter  , ' transactions. ')                                    # To show the number of transactions 
