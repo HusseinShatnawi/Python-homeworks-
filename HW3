@@ -1,0 +1,42 @@
+"""
+Write a python function that converts Roman numerals to decimal values. Go only till 20 (Roman: XX). Input: Roman Numerals. Output: Decimal Equivalent.
+
+I: 1, V:5,  X:10
+
+(Program ends only when q is entered for the Roman Numeral. Otherwise, keep playing)
+"""
+
+
+def converter(Roman):
+  counter = 0
+  ROMANSYMBOLS = ['I', 'V', 'X']
+  list1= []
+  I = 1
+  V = 5
+  X = 10
+  for z in Roman:
+    list1.append(z)
+
+    
+    for symbols in list1:
+      if symbols in ROMANSYMBOLS:
+        intermediate = list1.index("I")
+        secondconnection = list1.index("V")
+        thirdConnection = list1.index("X")
+
+          
+
+    if intermediate > secondconnection :
+      counter = counter + I + V
+    elif intermediate > thirdConnection:
+      counter = counter + I + X
+    elif intermediate < secondconnection:
+      counter = counter + V -I
+    elif intermediate < thirdConnection :
+      counter = counter + X - I
+
+    else:
+      print("Invalid symbol was detected, please enter valid Roman symbols")
+  return counter 
+
+converter('IX')
