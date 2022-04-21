@@ -1,0 +1,22 @@
+# Student Name : Hussein Shatnawi 
+
+# This program to find the vowels in any string you enter but if it find 'X' letter it will break and get out from the function !!
+# Fisrtly we are asked to use functions methods to acheive the target 
+# We define the fundtion 
+
+def vowelFinder(userInput):
+  counter = 0
+  
+  vowels = ['a','o','u','i','e','A','O','U','I','E']                                           # Here we defeind the vowels letters list
+  invalidLetters = ['x', 'X']                                                                  # Here we define the invlaid letters inside a list
+  for i in userInput :                                                                         # Here we make a loop to to start checking the letters 
+    if i not in invalidLetters :                                                               # Here we make the first condition ; to check letter xis not in the string 
+      if i in vowels :                                                                         # Here we check the provid letters if they contain vowels ; if yes then the counter counts 
+        counter +=1                                                                            # this is the counter 
+    else :
+      
+      return("There is x letter in you input !! Please try another statement ")                # This to break the program and stop it 
+
+  return counter 
+
+vowelFinder ('werrsdfvviuuuuis')                                                              # Calling the funcion 
